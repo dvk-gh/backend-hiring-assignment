@@ -1,0 +1,338 @@
+{
+	"variables": [],
+	"info": {
+		"name": "photos",
+		"_postman_id": "7fbbea70-431a-700e-579e-beb71a06e718",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get jwt token",
+			"request": {
+				"url": {
+					"raw": "{{site_url}}/get-token/?username=test_user_1",
+					"host": [
+						"{{site_url}}"
+					],
+					"path": [
+						"get-token",
+						""
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "test_user_1",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "create photos user 1",
+			"request": {
+				"url": "{{site_url}}/photos/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InRlc3RfdXNlcl8xIn0.ngVywNrLbr9N81rUyNNnvLCuHS2YvSjN7g_rXHwarjA",
+						"description": ""
+					},
+					{
+						"key": "username",
+						"value": "test_user_1",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"description": "",
+							"type": "file",
+							"src": "python.png"
+						},
+						{
+							"key": "caption",
+							"value": "arrow picture",
+							"type": "text"
+						},
+						{
+							"key": "is_draft",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "user ",
+							"value": "1",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "create photos user 2",
+			"request": {
+				"url": "{{site_url}}/photos/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InRlc3RfdXNlcl8yIn0.29QQl_SJ464BqkjOh7KdlWEa4-xqcp9Si8k5KPkXgPE",
+						"description": ""
+					},
+					{
+						"key": "username",
+						"value": "test_user_2",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"value": "",
+							"description": "",
+							"type": "file"
+						},
+						{
+							"key": "caption",
+							"value": "arrow picture",
+							"type": "text"
+						},
+						{
+							"key": "is_draft",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "user ",
+							"value": "2",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "edit photos caption",
+			"request": {
+				"url": "{{site_url}}/photos/",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6bnVsbH0.jIv0Qa7C0uDOLlCgMw9oBH419AKcf-IUt7-2QgX4SwA",
+						"description": ""
+					},
+					{
+						"key": "username",
+						"value": "test",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "caption",
+							"value": "arrow picture",
+							"type": "text"
+						},
+						{
+							"key": "is_draft",
+							"value": "false",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Post a photo",
+			"request": {
+				"url": "{{site_url}}/post-photo/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InRlc3RfdXNlcl8yIn0.29QQl_SJ464BqkjOh7KdlWEa4-xqcp9Si8k5KPkXgPE",
+						"description": ""
+					},
+					{
+						"key": "username",
+						"value": "test_user_2",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"value": "",
+							"description": "",
+							"type": "file"
+						},
+						{
+							"key": "photo_id",
+							"value": "4",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "List photos",
+			"request": {
+				"url": "{{site_url}}/photos/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InRlc3RfdXNlcl8xIn0.ngVywNrLbr9N81rUyNNnvLCuHS2YvSjN7g_rXHwarjA",
+						"description": ""
+					},
+					{
+						"key": "username",
+						"value": "test_user_1",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "is_draft",
+							"value": "true",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get photo ",
+			"request": {
+				"url": "{{site_url}}/photos/1/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InRlc3RfdXNlcl8xIn0.ngVywNrLbr9N81rUyNNnvLCuHS2YvSjN7g_rXHwarjA",
+						"description": ""
+					},
+					{
+						"key": "username",
+						"value": "test_user_1",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"value": "",
+							"description": "",
+							"type": "file"
+						},
+						{
+							"key": "caption",
+							"value": "arrow picture",
+							"type": "text"
+						},
+						{
+							"key": "is_draft",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "user ",
+							"value": "1",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete photo",
+			"request": {
+				"url": "{{site_url}}/photos/1999999/",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InRlc3RfdXNlcl8xIn0.ngVywNrLbr9N81rUyNNnvLCuHS2YvSjN7g_rXHwarjA",
+						"description": ""
+					},
+					{
+						"key": "username",
+						"value": "test_user_1",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"value": "",
+							"description": "",
+							"type": "file"
+						},
+						{
+							"key": "caption",
+							"value": "arrow picture",
+							"type": "text"
+						},
+						{
+							"key": "is_draft",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "user ",
+							"value": "1",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
