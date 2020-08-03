@@ -13,7 +13,9 @@ user2:  {id: 1, username: "test_user_2"}
 ``` 
 
 
-Photo APIs supported
+Photo APIs supported:
+
+( Deloyed on http://deepav88.pythonanywhere.com/ )
 
 Get Jwt Token has to be called first to obtain a token
 ```
